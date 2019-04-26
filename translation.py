@@ -1,7 +1,7 @@
 class Translation(object):
     START_TEXT = """Thank You for using me. I am made by [Anand](https://t.me/Anand_VFC)
 
-/help to know how to use me
+Click  /help  to know how to use me
 
 Source Code: https://github.com/SpEcHiDe/AnyDLBot
 © For Support [join here](https://t.me/joinchat/JoNrMhTGJlh3DDHLkmTITg)"""
