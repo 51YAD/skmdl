@@ -117,6 +117,8 @@ AVAILABLE COMMANDS ARE :
 /extractstreams - Extract Streams from Telegram media.
 /ffmpegrobot - Get Info.
 /trim (Long Press) and Enter TimeStamp.
+/downloadmedia - Download media to Storage.
+/storageinfo - Get info about currently saved Media.
 /clearffmpegmedia - Clear stored Media from Storage.
 /unzip - Extract Compressed Files.
 /getlink - Get Direct Download Link.

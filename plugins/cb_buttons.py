@@ -195,13 +195,6 @@ def button(bot, update):
                     o = entity.offset
                     l = entity.length
                     youtube_dl_url = youtube_dl_url[o:o + l]
-        if (str(update.from_user.id) not in Config.UTUBE_BOT_USERS) and (("hls" in youtube_dl_format) or ("hotstar.com" in youtube_dl_url)):
-            bot.edit_message_text(
-                chat_id=update.message.chat.id,
-                text=Translation.NOT_AUTH_USER_TEXT,
-                message_id=update.message.message_id
-            )
-            return
         if "noyes.in" in youtube_dl_url:
             bot.edit_message_text(
                 chat_id=update.message.chat.id,

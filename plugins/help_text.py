@@ -26,7 +26,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 from helper_funcs.chat_base import TRChatBase
 
 def GetExpiryDate(chat_id):
-    expires_at = (str(chat_id), "Free User", "Unlimited")
+    expires_at = (str(chat_id), "Free User", " Unlimited")
     return expires_at
 
 
