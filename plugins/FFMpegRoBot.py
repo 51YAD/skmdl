@@ -45,7 +45,6 @@ def ffmpegrobot_ad(bot, update):
 @pyrogram.Client.on_message(pyrogram.Filters.command(["trim"]))
 def trim(bot, update):
     TRChatBase(update.from_user.id, update.text, "trim")
-    if str(update.from_user.id) 
     saved_file_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".FFMpegRoBot.mkv"
     if os.path.exists(saved_file_path):
         a = bot.send_message(
