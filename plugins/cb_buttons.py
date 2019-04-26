@@ -217,7 +217,6 @@ def button(bot, update):
         description = Translation.CUSTOM_CAPTION_UL_FILE
         if "fulltitle" in response_json:
             description = response_json["fulltitle"][0:1021]
-        if ("@" in custom_file_name)
         download_directory = Config.DOWNLOAD_LOCATION + "/" + custom_file_name
         command_to_exec = []
         if tg_send_type == "audio":
