@@ -47,13 +47,6 @@ def extractsubtitle(video_file, output_directory):
 @pyrogram.Client.on_message(pyrogram.Filters.command(["extractstreams"]))
 def extract_sub_title(bot, update):
     TRChatBase(update.from_user.id, update.text, "extract_st_reams")
-    if str(update.from_user.id) not in Config.SUPER7X_DLBOT_USERS:
-        bot.send_message(
-            chat_id=update.chat.id,
-            text=Translation.NOT_AUTH_USER_TEXT,
-            reply_to_message_id=update.message_id
-        )
-        return
     download_location = Config.DOWNLOAD_LOCATION + "/"
     if update.reply_to_message is not None:
         text = update.reply_to_message.text

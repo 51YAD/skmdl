@@ -34,13 +34,6 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 @pyrogram.Client.on_message(pyrogram.Filters.command(["generatecustomthumbnail"]))
 def generate_custom_thumbnail(bot, update):
     TRChatBase(update.from_user.id, update.text, "generatecustomthumbnail")
-    if str(update.from_user.id) not in Config.SUPER7X_DLBOT_USERS:
-        bot.send_message(
-            chat_id=update.chat.id,
-            text=Translation.NOT_AUTH_USER_TEXT,
-            reply_to_message_id=update.message_id
-        )
-        return
     if update.reply_to_message is not None:
         reply_message = update.reply_to_message
         if reply_message.media_group_id is not None:
@@ -100,13 +93,6 @@ def save_photo(bot, update):
         )
         return
     if update.media_group_id is not None:
-        if str(update.from_user.id) not in Config.SUPER7X_DLBOT_USERS:
-            bot.send_message(
-                chat_id=update.chat.id,
-                text=Translation.NOT_AUTH_USER_TEXT,
-                reply_to_message_id=update.message_id
-            )
-            return
         # album is sent
         download_location = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + "/" + str(update.media_group_id) + "/"
         # create download directory, if not exist
