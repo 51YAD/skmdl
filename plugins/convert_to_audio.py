@@ -15,7 +15,7 @@ import time
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
 else:
-    from sample_config import Config
+    from config import Config
 
 # the Strings used for this "thing"
 from translation import Translation
@@ -35,13 +35,13 @@ from PIL import Image
 @pyrogram.Client.on_message(pyrogram.Filters.command(["converttoaudio"]))
 def convert_to_audio(bot, update):
     TRChatBase(update.from_user.id, update.text, "converttoaudio")
-if str(update.from_user.id) not in Config.SUPER_DLBOT_USERS:
-   bot.send_message(
-       chat_id=update.chat.id,
-       text=Translation.NOT_AUTH_USER_TEXT,
-       reply_to_message_id=update.message_id
-    )
-    return 
+    if str(update.from_user.id) not in Config.SUPER_DLBOT_USERS:
+        bot.send_message(
+            chat_id=update.chat.id,
+            text=Translation.NOT_AUTH_USER_TEXT,
+            reply_to_message_id=update.message_id
+        )
+        return
     if (update.reply_to_message is not None) and (update.reply_to_message.media is not None) :
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
