@@ -1,10 +1,8 @@
 class Translation(object):
-    START_TEXT = """Thank You for using me. I am made by [Anand](https://t.me/Anand_VFC)
-
-Click  /help  to know how to use me
-
+    START_TEXT = """Thank You for using me.I was made by [This Noob](https://t.me/Anand_VFC)
+/help to know how to use me
 Source Code: https://github.com/SpEcHiDe/AnyDLBot
-© For Support [join here](https://t.me/joinchat/JoNrMhTGJlh3DDHLkmTITg)"""
+© For support join this [group](https://t.me/joinchat/JoNrMhTGJlh3DDHLkmTITg)"""
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
     # UPGRADE_TEXT = "no one gonna help you 🤣🤣🤣🤣"
@@ -76,7 +74,7 @@ FEATURES:
 👉 PLUS, all newly features that are going to be added in the feature*.
 -------
 NOTE: After payment you must take screenshot of receipt and send to anyone of the admins
-@SpEcHlDe, or @ShriMADhaBot"""
+@Anand_VFC, or @TRS_adminbot"""
     FORMAT_SELECTION = "Select the desired format: <a href='{}'>file size might be approximate</a> \nIf you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons."
     SET_CUSTOM_USERNAME_PASSWORD = """If you want to download premium videos, provide in the following format:
 URL | filename | username | password"""
@@ -102,7 +100,8 @@ URL | filename | username | password"""
 Telegram ID: <code>{}</code>
 Plan name: <a href='https://t.me/SpEcHlDe/599'>{}</a>
 Expires on: {}"""
-    HELP_USER = """There are multiple things I can do
+    HELP_USER = """There are multiple things I can do:
+
 AVAILABLE COMMANDS ARE :
 
 /start - Check if bot is Online!
@@ -124,8 +123,7 @@ AVAILABLE COMMANDS ARE :
 /getlink - Get Direct Download Link.
 
 👉 PLUS, all newly features that are going to be added in the feature*.
-
---------
+-------------------------------------
 Send /me to know current plan details"""
     REPLY_TO_DOC_GET_LINK = "Reply to a Telegram media to get High Speed Direct Download Link"
     REPLY_TO_DOC_FOR_C2V = "Reply to a Telegram media to convert"

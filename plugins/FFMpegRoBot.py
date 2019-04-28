@@ -15,7 +15,7 @@ import time
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
 else:
-    from sample_config import Config
+    from config import Config
 
 # the Strings used for this "thing"
 from translation import Translation
@@ -45,6 +45,13 @@ def ffmpegrobot_ad(bot, update):
 @pyrogram.Client.on_message(pyrogram.Filters.command(["trim"]))
 def trim(bot, update):
     TRChatBase(update.from_user.id, update.text, "trim")
+    if str(update.from_user.id) not in Config.SUPER7X_DLBOT_USERS:
+        bot.send_message(
+            chat_id=update.chat.id,
+            text=Translation.NOT_AUTH_USER_TEXT,
+            reply_to_message_id=update.message_id
+        )
+        return
     saved_file_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".FFMpegRoBot.mkv"
     if os.path.exists(saved_file_path):
         a = bot.send_message(
@@ -148,6 +155,13 @@ def trim(bot, update):
 @pyrogram.Client.on_message(pyrogram.Filters.command(["storageinfo"]))
 def storage_info(bot, update):
     TRChatBase(update.from_user.id, update.text, "storageinfo")
+    if str(update.from_user.id) not in Config.SUPER7X_DLBOT_USERS:
+        bot.send_message(
+            chat_id=update.chat.id,
+            text=Translation.NOT_AUTH_USER_TEXT,
+            reply_to_message_id=update.message_id
+        )
+        return
     saved_file_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".FFMpegRoBot.mkv"
     if os.path.exists(saved_file_path):
         metadata = extractMetadata(createParser(saved_file_path))
@@ -171,6 +185,13 @@ def storage_info(bot, update):
 @pyrogram.Client.on_message(pyrogram.Filters.command(["clearffmpegmedia"]))
 def clear_media(bot, update):
     TRChatBase(update.from_user.id, update.text, "clearffmpegmedia")
+    if str(update.from_user.id) not in Config.SUPER7X_DLBOT_USERS:
+        bot.send_message(
+            chat_id=update.chat.id,
+            text=Translation.NOT_AUTH_USER_TEXT,
+            reply_to_message_id=update.message_id
+        )
+        return
     saved_file_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".FFMpegRoBot.mkv"
     if os.path.exists(saved_file_path):
         os.remove(saved_file_path)
@@ -184,6 +205,13 @@ def clear_media(bot, update):
 @pyrogram.Client.on_message(pyrogram.Filters.command(["downloadmedia"]))
 def download_media(bot, update):
     TRChatBase(update.from_user.id, update.text, "downloadmedia")
+    if str(update.from_user.id) not in Config.SUPER7X_DLBOT_USERS:
+        bot.send_message(
+            chat_id=update.chat.id,
+            text=Translation.NOT_AUTH_USER_TEXT,
+            reply_to_message_id=update.message_id
+        )
+        return
     saved_file_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".FFMpegRoBot.mkv"
     if not os.path.exists(saved_file_path):
         a = bot.send_message(

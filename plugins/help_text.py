@@ -15,7 +15,7 @@ import sqlite3
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
 else:
-    from sample_config import Config
+    from config import Config
 
 # the Strings used for this "thing"
 from translation import Translation
@@ -26,7 +26,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 from helper_funcs.chat_base import TRChatBase
 
 def GetExpiryDate(chat_id):
-    expires_at = (str(chat_id), "Free User", " Unlimited")
+    expires_at = (str(chat_id), "Free user", "1970.01.01.12.00.00")
     return expires_at
 
 

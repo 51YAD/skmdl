@@ -16,7 +16,7 @@ import time
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
 else:
-    from sample_config import Config
+    from config import Config
 
 # the Strings used for this "thing"
 from translation import Translation
@@ -47,6 +47,13 @@ def extractsubtitle(video_file, output_directory):
 @pyrogram.Client.on_message(pyrogram.Filters.command(["extractsubtitle"]))
 def extract_sub_title(bot, update):
     TRChatBase(update.from_user.id, update.text, "extract_sub_title")
+    if str(update.from_user.id) not in Config.SUPER7X_DLBOT_USERS:
+        bot.send_message(
+            chat_id=update.chat.id,
+            text=Translation.NOT_AUTH_USER_TEXT,
+            reply_to_message_id=update.message_id
+        )
+        return
     download_location = Config.DOWNLOAD_LOCATION + "/"
     if update.reply_to_message is not None:
         text = update.reply_to_message.text

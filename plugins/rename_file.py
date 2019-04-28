@@ -15,7 +15,7 @@ import time
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
 else:
-    from sample_config import Config
+    from config import Config
 
 # the Strings used for this "thing"
 from translation import Translation
@@ -35,7 +35,14 @@ from PIL import Image
 @pyrogram.Client.on_message(pyrogram.Filters.command(["rename"]))
 def rename_doc(bot, update):
     TRChatBase(update.from_user.id, update.text, "rename")
-    if str(" " in update.text) and (update.reply_to_message is not None):
+    if str(update.from_user.id) not in Config.SUPER3X_DLBOT_USERS:
+        bot.send_message(
+            chat_id=update.chat.id,
+            text=Translation.NOT_AUTH_USER_TEXT,
+            reply_to_message_id=update.message_id
+        )
+        return
+    if (" " in update.text) and (update.reply_to_message is not None):
         cmd, file_name = update.text.split(" ", 1)
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
