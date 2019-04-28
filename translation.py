@@ -1,5 +1,5 @@
 class Translation(object):
-    START_TEXT = """Thank You for using me.I was made by [This Noob](https://t.me/Anand_VFC)
+    START_TEXT = """Thank You for using me.I was made by [This Noob](https://t.me/MainAds_Admin)
 
 /help to know how to use me
 
