@@ -1,11 +1,11 @@
 class Translation(object):
-    START_TEXT = """Thank You for using me.I was made by [This Noob](https://t.me/Anand_VFC)
+    START_TEXT = """Thank You for using me.I was made by [This Noob](https://t.me/MainAds_Admin)
 
 /help to know how to use me
 
 Source Code: https://github.com/SpEcHiDe/AnyDLBot
 
-© For support join this [group](https://t.me/joinchat/JoNrMhTGJlh3DDHLkmTITg)"""
+© For support join this [group](https://t.me/ALL_INDLSUPPORT)"""
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
     # UPGRADE_TEXT = "no one gonna help you 🤣🤣🤣🤣"
